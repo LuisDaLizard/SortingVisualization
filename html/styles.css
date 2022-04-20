@@ -3,14 +3,49 @@ body {
 }
 
 h1 {
-    padding: 10px;
-    font-family: "Lucida Console", monospace;
+    color: white;
+    font-family: "FreeMono", monospace;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+nav {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 1px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    display: inline;
+}
+
+li a {
+    float: right;
+    color: white;
     text-align: center;
-    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+    display: inline-block;
+}
+
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+    border-radius: 10px;
 }
 
 #background {
     margin: auto;
     background-color: white;
     width: 80%;
+    border-radius: 10px;
 }
