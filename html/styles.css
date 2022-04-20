@@ -1,0 +1,16 @@
+body {
+    background-color: skyblue;
+}
+
+h1 {
+    padding: 10px;
+    font-family: "Lucida Console", monospace;
+    text-align: center;
+    color: black;
+}
+
+#background {
+    margin: auto;
+    background-color: white;
+    width: 80%;
+}
