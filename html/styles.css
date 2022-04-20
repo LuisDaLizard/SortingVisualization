@@ -2,24 +2,17 @@ body {
     background-color: skyblue;
 }
 
-h1 {
-    color: white;
-    font-family: "FreeMono", monospace;
-    font-size: 24px;
-    margin-left: 10px;
-}
-
 nav {
+    font-family: "FreeMono", monospace;
     background-color: #333;
     border-radius: 10px;
-    padding: 1px;
+    padding: 0px;
 }
 
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
 li {
@@ -30,9 +23,16 @@ li a {
     float: right;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 24px 16px;
     text-decoration: none;
     
+    display: inline-block;
+}
+
+li h1 {
+    padding-left: 5px;
+    color: white;
+    font-size: 24px;
     display: inline-block;
 }
 
@@ -40,7 +40,8 @@ li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover {
     background-color: #111;
-    border-radius: 10px;
+    border-radius:  10px;
+
 }
 
 #background {
