@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles.css">
     <title>Multimodal Project</title>
 </head>
-<body>
+<body onload="init()">
     <div class="navbar">
         <a href="index.html">Home</a>
         <div class="dropdown">
@@ -21,10 +21,13 @@
             </div>
         </div>
     </div>
-    <div id="background">
-        
-        <p> TODO: Write Intro Paragraph </p>
-        <div id=""></div>
-    </div>
+    <canvas id="canvas" width="1920" height="1080">
+        This text is displayed if your browser does not support HTML5 Canvas.
+    </canvas>
+    <button onclick="start()" class="settings" id="button1">Start</button>
+    <button onclick="shuffle()" class="settings" id="button2">Shuffle</button>
+    <input type="number" id="elements" name="elements" value="100" onchange="update()" />
+    <input type="number" id="delay" name="delay" value="0" onchange="update()" />
+    <script src="insertion.js"></script>
 </body>
 </html>
