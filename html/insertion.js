@@ -60,14 +60,17 @@ async function start() {
             j = i - 1;
             elements[i].select();
             draw();
-            await sleep(interval / 2);
+            if (interval > 0)
+                await sleep(interval / 2);
 
             while (j >= 0 && elements[j].value > key.value) {
                 elements[j + 1] = elements[j];
                 elements[j].select();
                 draw();
                 j = j - 1;
-                await sleep(interval);
+
+                if (interval > 0)
+                    await sleep(interval);
                 elements[j + 1].unselect();
                 draw();
             }
@@ -109,7 +112,7 @@ var Canvas = {
         this.height = this.canvas.height;
         this.context = this.canvas.getContext("2d");
         this.xRange = this.width - 10;
-        this.text = "insertion sort - " + size + " elements  " + interval + "ms delay";
+        this.text = "insertion sort O(N^2) - " + size + " elements  " + interval + "ms delay";
 
         var minHeight = 50;
         var yRange = this.height - minHeight - 10;

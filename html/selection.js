@@ -72,7 +72,8 @@ async function start() {
                     min = j;
 
                 // Wait for Delay
-                await sleep(interval);
+                if (interval > 0)
+                    await sleep(interval);
 
                 // Unselect Current and Minimum Element
                 elements[j].unselect();
@@ -118,7 +119,7 @@ var Canvas = {
         this.height = this.canvas.height;
         this.context = this.canvas.getContext("2d");
         this.xRange = this.width - 10;
-        this.text = "selection sort - " + size + " elements  " + interval + "ms delay";
+        this.text = "selection sort O(N^2) - " + size + " elements  " + interval + "ms delay";
 
         var minHeight = 50;
         var yRange = this.height - minHeight - 10;

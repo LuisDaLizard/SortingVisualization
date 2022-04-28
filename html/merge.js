@@ -9,12 +9,6 @@
 var elements = [];  // Elements array
 var size = 100;     // Number of Elements
 var interval = 1;   // Milliseconds to next update
-/*===================*/
-
-/*===== Globals =====*/
-var elements = [];  // Elements array
-var size = 100;     // Number of Elements
-var interval = 1;   // Milliseconds to next update
 var running = false;// Whether the algorithm is running
 /*===================*/
 
@@ -119,7 +113,8 @@ async function mergesort() {
                     elements[k] = L[i];
                     elements[k].select();
                     draw();
-                    await sleep(interval);
+                    if (interval > 0)
+                        await sleep(interval);
                     elements[k].unselect();
                     draw();
                     i++;
@@ -127,7 +122,8 @@ async function mergesort() {
                     elements[k] = R[j];
                     elements[k].select();
                     draw();
-                    await sleep(interval);
+                    if (interval > 0)
+                        await sleep(interval);
                     elements[k].unselect();
                     draw();
                     j++;
@@ -144,7 +140,8 @@ async function mergesort() {
                 draw();
                 i++;
                 k++;
-                await sleep(interval);
+                if (interval > 0)
+                    await sleep(interval);
                 elements[k - 1].unselect();
                 draw();
             }
@@ -158,7 +155,8 @@ async function mergesort() {
                 j++;
                 k++;
                 draw();
-                await sleep(interval);
+                if (interval > 0)
+                    await sleep(interval);
                 elements[k - 1].unselect();
                 draw();
             }
@@ -196,7 +194,7 @@ var Canvas = {
         this.height = this.canvas.height;
         this.context = this.canvas.getContext("2d");
         this.xRange = this.width - 10;
-        this.text = "merge sort - " + size + " elements  " + interval + "ms delay";
+        this.text = "merge sort O(N * Log N) - " + size + " elements  " + interval + "ms delay";
 
         var minHeight = 50;
         var yRange = this.height - minHeight - 10;
